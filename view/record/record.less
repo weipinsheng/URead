@@ -1,0 +1,77 @@
+.container {
+	.list-box {
+		padding-bottom: .2rem;
+		font-size: .18rem;
+		margin-left: .3rem;
+		border: .01rem solid #d9d9d9;
+		color: #9a9a9a;
+		margin-top: .2rem;
+		display: flex;
+		justify-content: flex-start;
+		flex-wrap: wrap;
+			.read {
+				width: 2.4rem;
+				height: 4rem;
+				border-radius: .1rem;
+				border: .01rem solid #eeeeee;
+				color: #9a9a9a;
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				margin-top: .2rem;
+				margin-left: .24rem;
+				flex-shrink: 0;
+				.time {
+					font-size: .14rem;
+					line-height: .4rem;
+				}
+				.book {
+					display: flex;
+					flex-direction: column;
+					align-items: center;
+					margin-top: .1rem;
+					.book-cover {
+						width: .9rem;
+						height: 1.2rem;
+					}
+					.book-title {		
+						margin-top: .1rem;
+						font-size: .18rem;
+						line-height: .4rem;
+						
+					}
+					.author {
+						font-size: .14rem;
+						line-height: .2rem;		
+					}	
+				}
+				.userinfo {	
+					margin-top: .3rem;
+					.read-doc {
+						display: flex;
+						justify-content: space-around;
+						.headshot {
+							width: .5rem;
+							height: .5rem;
+							border-radius: 50%;
+							overflow: hidden;
+						}
+						.read-info {
+							font-size: .14rem;
+							display: flex;
+							flex-direction: column;
+							line-height: .2rem;
+							align-items: center;
+							justify-content: space-around;
+							margin-left: .1rem;
+						}
+					}
+				}
+				.userid {
+					font-size: .18rem;
+					line-height: .6rem;
+					text-align: center;
+				}
+			}
+		}
+	}
