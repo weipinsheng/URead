@@ -25,9 +25,25 @@
     </header>
     <aside class="aside fl" ng-controller="ctrl">
         <ul class="bar-ul">
-            <li class="bar" ng-click="jump('/find')"><span class="icon find"></span>发现</li>
-            <li class="bar" ng-click="jump('/index')"><span class="icon book"></span>书城<span class="unfold fr" ng-click="toggle($event)"></span></li>
-            <li class="bar" ng-click="jump('/record')"><span class="icon data"></span>数据</li>
+            <li class="bar" ng-click="jump('/find')">
+                <p class="bar-text"><span class="icon find"></span>发现</p>                
+            </li>
+            <li class="bar" ng-click="jump('/index')">
+                <p class="bar-text current"><span class="icon book"></span>书城<span class="unfold fr" ng-click="toggle($event)"></span></p>                
+                <ul class="classify">
+                    <li>小说</li>
+                    <li>成功励志</li>
+                    <li class="current">经济管理</li>
+                    <li>成功励志</li>
+                    <li>成功励志</li>
+                    <li>成功励志</li>
+                    <li>成功励志</li>
+                    <li>成功励志</li>
+                </ul>
+            </li>
+            <li class="bar" ng-click="jump('/record')">
+                <p class="bar-text"><span class="icon data"></span>数据</p>
+            </li>
         </ul>
     </aside>
     <section class="container animate" ng-view></section>
