@@ -1,3 +1,11 @@
+<div class="refresh" ng-hide="display.loading">
+    <img src="images/refresh.png">
+    <p class="loading">加载中</p>
+</div>
+<div class="timeout" ng-hide="display.error">
+    <img src="images/error.png">
+    <p class="error">请求超时</p>
+</div>
 <h1 class="title">数据</h1>
 <div class="list-box">
     <div class="read">
@@ -18,58 +26,70 @@
             <p class="userid">Caimix</p>
         </div>
     </div>
-    <div class="read">
-        <h5 class="time">读书时间</h5>
-        <div class="book">
-            <img class="book-cover" src="images/bookcover.png" alt="封面">
-            <p class="book-title">卖耳朵的小女孩</p>
-            <p class="author">小女孩</p>
+    <div class="read motto" style="background-image: url(http://img4.imgtn.bdimg.com/it/u=2750694183,4138033973&fm=200&gp=0.jpg)">
+        <div class="now-time">
+            <span class="week">Monday</span>
+            <span class="month">September</span>
+            <span class="day">18</span>
+            <span class="th">th</span>
         </div>
-        <div class="userinfo">
-            <div class="read-doc">
-                <img class="headshot" src="images/headshot.png" alt="头像">
-                <p class="read-info">
-                    <span>24分钟</span>
-                    <span>1本书</span>
-                </p>
-            </div>
-            <p class="userid">Caimix</p>
+        <div class="motto-content">
+            <p class="motto-text">失败是成功的老妈老妈老妈老妈老妈</p>
+            <p class="motto-author">——韦品生</p>
+        </div>
+        <div class="ctrl">
+            <span class="edit" ng-click="edit($event)">编辑</span>
+            <span class="delete">删除</span>
         </div>
     </div>
-    <div class="read">
-        <h5 class="time">读书时间</h5>
-        <div class="book">
-            <img class="book-cover" src="images/bookcover.png" alt="封面">
-            <p class="book-title">卖耳朵的小女孩</p>
-            <p class="author">小女孩</p>
-        </div>
-        <div class="userinfo">
-            <div class="read-doc">
-                <img class="headshot" src="images/headshot.png" alt="头像">
-                <p class="read-info">
-                    <span>24分钟</span>
-                    <span>1本书</span>
-                </p>
-            </div>
-            <p class="userid">Caimix</p>
-        </div>
+    <div class="read share">
+        <p class="book-header">本周好书分享</p>
+        <p class="vision">第1期</p>
+        <ul class="books">
+            <li class="book-list">
+                <img src="images/add.png" class="bookcover">
+                <p class="bookname">书名</p>
+            </li>
+            <li class="book-list">
+                <img src="images/add.png" class="bookcover">
+                <p class="bookname">书名</p>
+            </li>
+            <li class="book-list">
+                <img src="images/add.png" class="bookcover">
+                <p class="bookname">书名</p>
+            </li>
+            <li class="book-list">
+                <img src="images/add.png" class="bookcover">
+                <p class="bookname">书名</p>
+            </li>
+            <li class="book-list">
+                <img src="images/add.png" class="bookcover">
+                <p class="bookname">书名</p>
+            </li>
+            <li class="book-list">
+                <img src="images/add.png" class="bookcover">
+                <p class="bookname">书名</p>
+            </li>
+        </ul>
+        <div class="more">点击查看更多</div>
     </div>
-    <div class="read">
-        <h5 class="time">读书时间</h5>
-        <div class="book">
-            <img class="book-cover" src="images/bookcover.png" alt="封面">
-            <p class="book-title">卖耳朵的小女孩</p>
-            <p class="author">小女孩</p>
-        </div>
-        <div class="userinfo">
-            <div class="read-doc">
-                <img class="headshot" src="images/headshot.png" alt="头像">
-                <p class="read-info">
-                    <span>24分钟</span>
-                    <span>1本书</span>
-                </p>
+    <div class="add-group" ng-hide="display.add_show">       
+            <div class="add">
+                <label for="imgPut" class="img-btn">
+                    <img id="preview" ng-src="{{imgSrc}}">
+                </label>
+                <input type="file" id="imgPut" accept="image/*" class="img-put" name="Motto" onchange="angular.element(this).scope().imgPreview(this.files)">
+                <span class="sure" ng-click="submit_img()">确认</span>
             </div>
-            <p class="userid">Caimix</p>
-        </div>
+            <div class="push">
+                <h3 class="subtitle">上传卡片</h3>
+                <div class="write">
+                    <textarea cols="30" rows="10" placeholder="输入文字..." ng-change="show()" ng-model="motto_txt"></textarea>
+                </div>
+                <div class="ctrl">
+                    <span class="submit" ng-click="submit($event)">确认上传</span>
+                    <span class="cancel" ng-click="cancel($event)">取消</span>
+                </div>                
+            </div>
     </div>
 </div>

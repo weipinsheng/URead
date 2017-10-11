@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
     <title>URead</title>
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="css/reset.css">
@@ -13,6 +14,7 @@
 </head>
 
 <body>
+    <!-- 引入响应的rem -->
     <script src="js/device.js"></script>
     <header class="header clearfix">
         <div class="logo fl">
@@ -23,7 +25,7 @@
             <span class="signout"></span>
         </div>
     </header>
-    <aside class="aside fl" ng-controller="ctrl">
+    <aside class="aside fl" ng-controller="myCtrl">
         <ul class="bar-ul">
             <li class="bar" ng-click="jump('/find')">
                 <p class="bar-text"><span class="icon find"></span>发现</p>                
@@ -51,7 +53,7 @@
     <script src="js/lib/angular.js"></script>
     <script src="js/lib/angular-route.js"></script>
     <script src="js/lib/angular-animate.js"></script>
-    <script src="js/route.js"></script>
+    <script src="js/whole.js"></script>
 </body>
 
 </html>

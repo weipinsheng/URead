@@ -1,77 +1,232 @@
 .container {
-	.list-box {
-		padding-bottom: .2rem;
-		font-size: .18rem;
-		margin-left: .3rem;
-		border: .01rem solid #d9d9d9;
-		color: #9a9a9a;
-		margin-top: .2rem;
-		display: flex;
-		justify-content: flex-start;
-		flex-wrap: wrap;
-			.read {
-				width: 2.4rem;
-				height: 4rem;
-				border-radius: .1rem;
-				border: .01rem solid #eeeeee;
-				color: #9a9a9a;
-				display: flex;
-				flex-direction: column;
-				align-items: center;
-				margin-top: .2rem;
-				margin-left: .24rem;
-				flex-shrink: 0;
-				.time {
-					font-size: .14rem;
-					line-height: .4rem;
-				}
-				.book {
-					display: flex;
-					flex-direction: column;
-					align-items: center;
-					margin-top: .1rem;
-					.book-cover {
-						width: .9rem;
-						height: 1.2rem;
-					}
-					.book-title {		
-						margin-top: .1rem;
-						font-size: .18rem;
-						line-height: .4rem;
-						
-					}
-					.author {
-						font-size: .14rem;
-						line-height: .2rem;		
-					}	
-				}
-				.userinfo {	
-					margin-top: .3rem;
-					.read-doc {
-						display: flex;
-						justify-content: space-around;
-						.headshot {
-							width: .5rem;
-							height: .5rem;
-							border-radius: 50%;
-							overflow: hidden;
-						}
-						.read-info {
-							font-size: .14rem;
-							display: flex;
-							flex-direction: column;
-							line-height: .2rem;
-							align-items: center;
-							justify-content: space-around;
-							margin-left: .1rem;
-						}
-					}
-				}
-				.userid {
-					font-size: .18rem;
-					line-height: .6rem;
-					text-align: center;
-				}
-			}
-		}
-	}
+    .list-box {
+        padding-bottom: .2rem;
+        font-size: .18rem;
+        margin-left: .3rem;
+        border: .01rem solid #d9d9d9;
+        color: #9a9a9a;
+        margin-top: .2rem;
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        .read {
+            width: 2.4rem;
+            height: 4rem;
+            border-radius: .1rem;
+            border: .01rem solid #eeeeee;
+            color: #9a9a9a;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: .2rem;
+            margin-left: .24rem;
+            flex-shrink: 0;
+            .time {
+                font-size: .14rem;
+                line-height: .4rem;
+            }
+            .book {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: .1rem;
+                .book-cover {
+                    width: .9rem;
+                    height: 1.2rem;
+                }
+                .book-title {
+                    margin-top: .1rem;
+                    font-size: .18rem;
+                    line-height: .4rem;
+                }
+                .author {
+                    font-size: .14rem;
+                    line-height: .2rem;
+                }
+            }
+            .userinfo {
+                margin-top: .3rem;
+                .read-doc {
+                    display: flex;
+                    justify-content: space-around;
+                    .headshot {
+                        width: .5rem;
+                        height: .5rem;
+                        border-radius: 50%;
+                        overflow: hidden;
+                    }
+                    .read-info {
+                        font-size: .14rem;
+                        display: flex;
+                        flex-direction: column;
+                        line-height: .2rem;
+                        align-items: center;
+                        justify-content: space-around;
+                        margin-left: .1rem;
+                    }
+                }
+            }
+            .userid {
+                font-size: .18rem;
+                line-height: .6rem;
+                text-align: center;
+            }
+        }
+        .share {
+            flex-wrap: wrap;
+            .book-header {
+                font-size: .14rem;
+                line-height: .4rem;
+            }
+            .vision {
+                font-size: .12rem;
+            }
+            .books {
+                display: flex;
+                flex-wrap: wrap;
+                margin-top: .2rem;
+                .book-list {
+                    flex-shrink: 0;
+                    margin-left: .15rem;
+                    margin-top: .1rem;
+                    .bookcover {
+                        width: .6rem;
+                        height: .8rem;
+                        cursor: pointer;
+                    }
+                    .bookname {
+                        font-size: .12rem;
+                    }
+                }
+            }
+            .more {
+                color: #fff;
+                background-color: #1b88ee;
+                height: .3rem;
+                line-height: .3rem;
+                width: 1.75rem;
+                text-align: center;
+                font-size: .14rem;
+                margin-top: .4rem;
+                border-radius: .05rem;
+                cursor: pointer;
+            }
+        }
+        .motto {
+            background-image: url('../../images/Jupiter.png');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+            justify-content: space-between;
+            color: #fff;
+            position: relative;
+            .now-time {
+                font-size: .12rem;
+                margin-top: .2rem;
+                .week {}
+                .month {}
+                .day {
+                    font-size: .24rem;
+                }
+                .th {}
+            }
+            .motto-content {
+                width: 85%;
+                font-size: .12rem;
+                margin-bottom: .2rem;
+                line-height: .3rem;
+                .motto-text {}
+                .motto-author {
+                    text-align: right;
+                }
+            }
+            .ctrl {
+                position: absolute;
+                bottom: 0;
+                .edit {
+                    cursor: pointer;
+                }
+                .delete {
+                    cursor: pointer;
+                }
+            }
+        }
+        .add-group {
+            position: absolute;
+            top: 0;
+            background-color: #fff;
+            top: .5rem;
+            left: 1rem;
+            display: flex;
+            border: .01rem solid #dcdcdc;
+            border-radius: .1rem;
+            overflow: hidden;
+            .add {
+                position: relative;
+                .img-btn {
+                    cursor: pointer;
+                    display: block;
+                    img {
+                        width: 3.1rem;
+                        height: 4.7rem;
+                    }
+                }
+                .img-put {
+                    display: none;
+                }
+                .sure {
+                    position: absolute;
+                    bottom: 0;
+                    width: .5rem;
+                    height: .25rem;
+                    text-align: center;
+                    cursor: pointer;
+                    &:hover {
+                        background-color: #1b88ee;
+                        color: #fff;
+                    }
+                }
+            }
+            .push {
+                margin-left: .2rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                padding-right: .2rem;
+                .subtitle {
+                    font-size: .24rem;
+                    line-height: .6rem;
+                    width: 100%;
+                }
+                .write {
+                    textarea:first-child {
+                        padding: .1rem;
+                        color: #9a9a9a;
+                        font-size: .14rem;
+                        width: 3.5rem;
+                        height: 2.8rem;
+                        border: .01rem solid #d9d9d9;
+                        resize: none;
+                    }
+                }
+                .ctrl {
+                    .submit {
+                        margin-top: .4rem;
+                        width: 1.5rem;
+                        height: .4rem;
+                        line-height: .4rem;
+                        text-align: center;
+                        background-color: #1b88ee;
+                        color: #fff;
+                        border-radius: .05rem;
+                        display: inline-block;
+                        cursor: pointer;
+                    }
+                    .cancel {
+                        .submit;
+                    }
+                }
+            }
+        }
+    }
+}
