@@ -47,27 +47,39 @@
         <p class="vision">第1期</p>
         <ul class="books">
             <li class="book-list">
-                <img src="images/add.png" class="bookcover">
+                <label class="bookcover" style="background-image: url({{shareBook.shareBook1}});">
+                    <input type="file" style="display: none" onchange="angular.element(this).scope().imgPreview(this.files,)" />
+                </label>
                 <p class="bookname">书名</p>
             </li>
             <li class="book-list">
-                <img src="images/add.png" class="bookcover">
+                <label class="bookcover" style="background-image: url({{shareBook.shareBook2}});">
+                    <input type="file" style="display: none" onchange="angular.element(this).scope().imgPreview(this.files)" />
+                </label>
                 <p class="bookname">书名</p>
             </li>
             <li class="book-list">
-                <img src="images/add.png" class="bookcover">
+                <label class="bookcover" style="background-image: url({{shareBook.shareBook3}});">
+                    <input type="file" style="display: none" />
+                </label>
                 <p class="bookname">书名</p>
             </li>
             <li class="book-list">
-                <img src="images/add.png" class="bookcover">
+                <label class="bookcover" style="background-image: url({{shareBook.shareBook4}});">
+                    <input type="file" style="display: none" />
+                </label>
                 <p class="bookname">书名</p>
             </li>
             <li class="book-list">
-                <img src="images/add.png" class="bookcover">
+                <label class="bookcover" style="background-image: url({{shareBook.shareBook5}});">
+                    <input type="file" style="display: none" />
+                </label>
                 <p class="bookname">书名</p>
             </li>
             <li class="book-list">
-                <img src="images/add.png" class="bookcover">
+                <label class="bookcover" style="background-image: url({{shareBook.shareBook6}});">
+                    <input type="file" style="display: none" />
+                </label>
                 <p class="bookname">书名</p>
             </li>
         </ul>
@@ -76,10 +88,9 @@
     <div class="add-group" ng-hide="display.add_show">       
             <div class="add">
                 <label for="imgPut" class="img-btn">
-                    <img id="preview" ng-src="{{imgSrc}}">
+                    <img id="preview" ng-src="{{motto}}">
                 </label>
                 <input type="file" id="imgPut" accept="image/*" class="img-put" name="Motto" onchange="angular.element(this).scope().imgPreview(this.files)">
-                <span class="sure" ng-click="submit_img()">确认</span>
             </div>
             <div class="push">
                 <h3 class="subtitle">上传卡片</h3>

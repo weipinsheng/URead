@@ -93,6 +93,9 @@
                         width: .6rem;
                         height: .8rem;
                         cursor: pointer;
+                        display: block;
+                        background-size: cover;
+                        background-repeat: no-repeat; 
                     }
                     .bookname {
                         font-size: .12rem;
@@ -162,7 +165,6 @@
             border-radius: .1rem;
             overflow: hidden;
             .add {
-                position: relative;
                 .img-btn {
                     cursor: pointer;
                     display: block;
@@ -173,18 +175,6 @@
                 }
                 .img-put {
                     display: none;
-                }
-                .sure {
-                    position: absolute;
-                    bottom: 0;
-                    width: .5rem;
-                    height: .25rem;
-                    text-align: center;
-                    cursor: pointer;
-                    &:hover {
-                        background-color: #1b88ee;
-                        color: #fff;
-                    }
                 }
             }
             .push {

@@ -13,13 +13,25 @@ angular.module('app', ['ng', 'ngRoute', 'ngAnimate'])
         //数据的控制器
     }]).controller('recordCtrl', ['$scope', '$http', '$timeout', function($scope, $http, $timeout) {
 
-
+        //控制显示隐藏
         $scope.display = {
             add_show: true, //控制上传图片框的显示与隐藏
             loading: true, //控制加载动画
             error: true //控制请求错误动画
         }
 
+        //座右铭背景图
+        $scope.motto = "images/add.png";
+
+        //分享好书封面
+        $scope.shareBook = {
+            shareBook1: 'images/add.png',
+            shareBook2: 'images/add.png',
+            shareBook3: 'images/add.png',
+            shareBook4: 'images/add.png',
+            shareBook5: 'images/add.png',
+            shareBook6: 'images/add.png'
+        }
         //请求超时函数
         let timeout_error = function() {
 
@@ -27,8 +39,8 @@ angular.module('app', ['ng', 'ngRoute', 'ngAnimate'])
                 $scope.display.loading = true;
                 $scope.display.error = false;
             }, 6000);
-            return timeout_error;
 
+            return timeout_error;
         }
         $scope.error = timeout_error();
 
@@ -54,16 +66,15 @@ angular.module('app', ['ng', 'ngRoute', 'ngAnimate'])
             })
         });
 
-
-
+        //卡片编辑按钮
         $scope.edit = function($event) {
             $event.stopPropagation();
             $scope.display.add_show = false;
         }
 
-        //初始为加号图片
-        $scope.imgSrc = "images/add.png";
+        
         $scope.reader = new FileReader(); //创建一个FileReader接口
+
         //选择图片后执行的函数
         $scope.imgPreview = function(files) {
 
@@ -72,17 +83,18 @@ angular.module('app', ['ng', 'ngRoute', 'ngAnimate'])
             $scope.reader.onload = function(e) {
                 //ng-src数据改变不进行刷新，必须要用$apply
                 $scope.$apply(function() {
-                    $scope.imgSrc = e.target.result;
+                    $scope.motto = e.target.result;
                 })
             }
             // 上传文件需要使用FormData
             $scope.img = new FormData();
 
             $scope.img.append("Motto", files[0])
-
+            $scope.submit_img();//选中图片马上发送请求
         }
-        //提交图片
+
         $scope.submit_data = {}; //需要提交的数据
+        //图片上传
         $scope.submit_img = function() {
             $scope.display.loading = false;
             $scope.error; //执行请求超时定时器
@@ -109,6 +121,7 @@ angular.module('app', ['ng', 'ngRoute', 'ngAnimate'])
             $scope.submit_data.text = $scope.motto_txt
         }
         //点击提交
+        //确认
         $scope.submit = function($event) {
 
             $event.stopPropagation();
@@ -129,6 +142,7 @@ angular.module('app', ['ng', 'ngRoute', 'ngAnimate'])
 
                 $timeout.cancel($scope.error); //请求成功后清除定时器
 
+
             }).catch(function(res) {
                 console.log(res.data)
                 $scope.display.loading = true;
@@ -137,6 +151,7 @@ angular.module('app', ['ng', 'ngRoute', 'ngAnimate'])
             })
 
         }
+        //取消
         $scope.cancel = function($event) {
             $event.stopPropagation();
             $scope.display.add_show = true;
